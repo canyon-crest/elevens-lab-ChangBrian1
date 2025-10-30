@@ -10,5 +10,8 @@ public class CardTester1 {
 	 */
 	public static void main(String[] args) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
+		Card1 card1 = new Card1();
+		Card1 card2 = new Card1();
+		Card1 card3 = new Card1();
 	}
 }
