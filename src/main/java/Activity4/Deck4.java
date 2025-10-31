@@ -38,7 +38,7 @@ public class Deck4 {
 			}
 		}
 		size = cards.size();
-		shuffle();
+		//shuffle();
 	}
 
 
@@ -57,15 +57,37 @@ public class Deck4 {
 	public int size() {
 		return size;
 	}
+	
+	public ArrayList<Card4> card(){
+		return (ArrayList<Card4>)cards;
+	}
 
 	/**
 	 * Randomly permute the given collection of cards
 	 * and reset the size to represent the entire deck.
 	 */
-	public void shuffle() {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
-		this.size = 0; // remove me
-	}
+	public void shuffle(ArrayList<Card4> values) {
+
+			boolean add = true;
+			ArrayList<Card4>shuffled=new ArrayList<>();
+			while(shuffled.size()!=values.size()) {
+				int random = (int)(Math.random()*(values.size()));
+				for(int i=0; i<shuffled.size(); i++) {
+					if(shuffled.get(i).equals(values.get(random))) {
+						add=false;
+					}
+				}
+				if(add) {
+					shuffled.add(values.get(random));
+				}
+				add = true;
+			}
+			for(int i=0; i<values.size();i++) {
+				values.set(i, shuffled.get(i));
+			}
+			
+		}
+	
 
 	/**
 	 * Deals a card from this deck.
