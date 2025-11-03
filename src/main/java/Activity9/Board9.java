@@ -51,6 +51,9 @@ public abstract class Board9 {
 		dealMyCards();
 	}
 
+	public Card9[] cards() {
+		return cards;
+	}
 	/**
 	 * Accesses the size of the board.
 	 * Note that this is not the number of cards it contains,
